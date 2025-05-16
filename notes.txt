@@ -1,0 +1,20 @@
+https://blog.helix.ml/p/building-a-local-llm-powered-kubernetes?utm_campaign=post&utm_medium=web
+https://anjulsahu.substack.com/p/machine-learning-orchestration-on-kubernetes-using-kubeflow-2069767e20ca?utm_campaign=post&utm_medium=web
+https://dataengineeringcentral.substack.com/p/kubernetes-for-data-engineers
+
+https://www.youtube.com/watch?v=rysdr4khB5k
+
+https://youtu.be/fFgyOucIFuk?si=B93LnSK1oS7M_fOb
+
+https://www.youtube.com/watch?v=fCUkvL0mbxI>>good 
+
+https://www.youtube.com/watch?v=BUTjcAjfMgY>>good 
+
+https://schoolofdevops.com/
+
+Inference
+=======
+thinking(predicting) based on what i know already based on trained data or model 
+
+MLOPS
+======
