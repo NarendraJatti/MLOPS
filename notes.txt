@@ -1,3 +1,20 @@
+note:
+
+ docker compose -f docker-compose.yaml  up -d
+
+if you are not able to get venc ,then also create amnaually in the vscode itself by using run click button in any notebook.
+in gitbash
+=======
+pip uninstall jupyterlab -y && pip install jupyterlab
+jupyter-lab
+
+source .venv/Scripts/activate>>in gitbash
+
+.venv\Scripts\activate>>run in vscode
+
+py .\run_processing.py
+
+
 https://blog.helix.ml/p/building-a-local-llm-powered-kubernetes?utm_campaign=post&utm_medium=web
 https://anjulsahu.substack.com/p/machine-learning-orchestration-on-kubernetes-using-kubeflow-2069767e20ca?utm_campaign=post&utm_medium=web
 https://dataengineeringcentral.substack.com/p/kubernetes-for-data-engineers
@@ -18,3 +35,88 @@ thinking(predicting) based on what i know already based on trained data or model
 
 MLOPS
 ======
+input feature
+output feature/target variable 
+thinking>>inference ,based on  historical values/data 
+
+x>>inputs,features
+y>>ouputs,target variables
+
+model ?
+algo has learnt from data and ready to infere from similar data
+
+algo types
+===========
+ensemeble mode>multiple 
+1)liner regression
+2)logistics regression
+3)decision tree 
+4)random forest(second opionion)
+5)Support vector machine(SVM)
+6)neural networks 
+7)boosting algo >>xgboost,lightgm 
+
+
+Key Differences
+Aspect	Experimentation Phase	Final Training Phase
+Goal	Find best model/config	Train deployable model
+Data Used	Train/Validation splits	Full dataset (train + validation)
+Hyperparams	Searched via CV	Fixed (best from experiments)
+Output	Metrics, configs	Production-ready model
+
+
+What is a Trained Pickle File?
+A trained pickle file (model.pkl) is a serialized (saved) version of your machine learning model after training. It contains:
+
+The model’s architecture (e.g., RandomForest, Neural Network).
+
+Learned parameters (e.g., weights, decision rules).
+
+Preprocessing steps (if bundled, e.g., scikit-learn pipelines).
+
+Inference in House Price Prediction (Simple Explanation)
+Inference is the process of using a trained machine learning model to make predictions on new, unseen data. In the context of house price prediction, it means:
+"Given a new house's features (e.g., size, bedrooms, location), what price does the model predict?"
+
+
+ Trained Model
+You’ve already trained and saved a model (e.g., model.pkl) that learned patterns from historical house data.
+
+
+Key Points
+Input: New house data (never seen during training).
+
+Preprocessing: The same steps (e.g., scaling, encoding) applied during training must be reused.
+(Example: If you scaled "size_sqft" to 0–1 during training, scale the new input the same way!)
+
+Output: A predicted price (or probability/confidence interval, depending on the model).
+
+
+Where Inference Happens
+Batch Inference: Predict prices for 1,000 houses at once (e.g., for a real estate report).
+
+Real-Time Inference: Predict instantly when a user submits a house on a website (e.g., Zillow’s "Zestimate").
+
+
+
+
+Deployment: The saved model (model.pkl) is loaded into an app/API to serve predictions.
+
+No Retraining Needed: The model uses pre-learned patterns to infer prices for new data.
+
+Trained Model
+│
+├── Historical Data (Training)  
+│   ├── size_sqft, bedrooms, location → $300K  
+│   └── size_sqft, bedrooms, location → $500K  
+│
+└── New Data (Inference)  
+    └── size_sqft=1500, bedrooms=3 → Predict $350K
+
+
+Key Terms
+Features: Inputs (e.g., size, bedrooms).
+
+Target: Output (predicted price).
+
+Preprocessing: Cleaning/scaling data before inference.
